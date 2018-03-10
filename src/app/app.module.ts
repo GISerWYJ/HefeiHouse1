@@ -10,6 +10,7 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+<<<<<<< HEAD
 import { DeviceOrientation } from "@ionic-native/device-orientation";
 import { HomePage } from "../pages/home/home";
 import { StartPage } from "../pages/start/start";
@@ -36,15 +37,19 @@ import { Keyboard } from "@ionic-native/keyboard";
 import {ScreenOrientation} from "@ionic-native/screen-orientation"
 import { ViewResizer } from '../providers/view-resizer/view-resizer';
 import { OraSpatialParser } from '../providers/ora-spatial-parser/ora-spatial-parser';
+import { HelloProvider } from '../providers/hello/hello';
 
 
 
 
+=======
+>>>>>>> b239435... Initial commit
 @NgModule({
   declarations: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
+<<<<<<< HEAD
     ListPage,
     HomePage,
     StartPage,
@@ -69,12 +74,20 @@ import { OraSpatialParser } from '../providers/ora-spatial-parser/ora-spatial-pa
     BrowserAnimationsModule,
 
 
+=======
+    ListPage
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+>>>>>>> b239435... Initial commit
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
+<<<<<<< HEAD
     ListPage,
     HomePage,
     StartPage,
@@ -84,10 +97,14 @@ import { OraSpatialParser } from '../providers/ora-spatial-parser/ora-spatial-pa
     MapPage,
     ImageViewerPage,
     NewhousePage
+=======
+    ListPage
+>>>>>>> b239435... Initial commit
   ],
   providers: [
     StatusBar,
     SplashScreen,
+<<<<<<< HEAD
     DeviceOrientation,
     Camera,
     FileTransfer,
@@ -100,7 +117,14 @@ import { OraSpatialParser } from '../providers/ora-spatial-parser/ora-spatial-pa
     Keyboard,
     ScreenOrientation,
     ViewResizer,
-    OraSpatialParser
+    OraSpatialParser,
+    HelloProvider
   ]
 })
 export class AppModule { }
+=======
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+})
+export class AppModule {}
+>>>>>>> b239435... Initial commit
