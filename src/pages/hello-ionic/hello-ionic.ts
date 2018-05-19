@@ -45,7 +45,7 @@ export class HelloIonicPage {
 
   ionViewDidEnter() {
     // this.map.updateSize();
-    console.log('Enter View');
+    console.log('Enter ViewHAHAHA');
   }
 
 
