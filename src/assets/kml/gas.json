@@ -1,0 +1,85 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "OBJECTID" : "OBJECTID",
+    "标识码" : "标识码",
+    "图上名称" : "图上名称",
+    "类别代码" : "类别代码",
+    "使用时间" : "使用时间",
+    "地名编码" : "地名编码",
+    "街道" : "街道",
+    "类别" : "类别"
+  },
+  "geometryType" : "esriGeometryPoint",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "标识码",
+      "type" : "esriFieldTypeString",
+      "alias" : "标识码",
+      "length" : 36
+    },
+    {
+      "name" : "图上名称",
+      "type" : "esriFieldTypeString",
+      "alias" : "图上名称",
+      "length" : 100
+    },
+    {
+      "name" : "类别代码",
+      "type" : "esriFieldTypeString",
+      "alias" : "类别代码",
+      "length" : 10
+    },
+    {
+      "name" : "使用时间",
+      "type" : "esriFieldTypeString",
+      "alias" : "使用时间",
+      "length" : 30
+    },
+    {
+      "name" : "地名编码",
+      "type" : "esriFieldTypeString",
+      "alias" : "地名编码",
+      "length" : 50
+    },
+    {
+      "name" : "街道",
+      "type" : "esriFieldTypeString",
+      "alias" : "街道",
+      "length" : 50
+    },
+    {
+      "name" : "类别",
+      "type" : "esriFieldTypeString",
+      "alias" : "类别",
+      "length" : 50
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "OBJECTID" : 1,
+        "标识码" : "7ab44559-9e7b-4197-92be-22d316c8db6d",
+        "图上名称" : "杨林路电动汽车换电站",
+        "类别代码" : "23660",
+        "使用时间" : "现今地名",
+        "地名编码" : "34010410023660000012",
+        "街道" : "井岗镇",
+        "类别" : "加油站"
+      },
+      "geometry" : {
+        "x" : 117.14357398600009,
+        "y" : 31.838686159000076
+      }
+    }
+  ]
+}

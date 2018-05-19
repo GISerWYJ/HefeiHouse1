@@ -1,0 +1,101 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "OBJECTID" : "OBJECTID",
+    "标识码" : "标识码",
+    "图上名称" : "图上名称",
+    "类别代码" : "类别代码",
+    "使用时间" : "使用时间",
+    "地名编码" : "地名编码",
+    "街道" : "街道",
+    "类别" : "类别"
+  },
+  "geometryType" : "esriGeometryPoint",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "标识码",
+      "type" : "esriFieldTypeString",
+      "alias" : "标识码",
+      "length" : 36
+    },
+    {
+      "name" : "图上名称",
+      "type" : "esriFieldTypeString",
+      "alias" : "图上名称",
+      "length" : 100
+    },
+    {
+      "name" : "类别代码",
+      "type" : "esriFieldTypeString",
+      "alias" : "类别代码",
+      "length" : 10
+    },
+    {
+      "name" : "使用时间",
+      "type" : "esriFieldTypeString",
+      "alias" : "使用时间",
+      "length" : 30
+    },
+    {
+      "name" : "地名编码",
+      "type" : "esriFieldTypeString",
+      "alias" : "地名编码",
+      "length" : 50
+    },
+    {
+      "name" : "街道",
+      "type" : "esriFieldTypeString",
+      "alias" : "街道",
+      "length" : 50
+    },
+    {
+      "name" : "类别",
+      "type" : "esriFieldTypeString",
+      "alias" : "类别",
+      "length" : 50
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "OBJECTID" : 1,
+        "标识码" : "81a43337-07a9-45c7-9594-f06796b75b77",
+        "图上名称" : "大蜀山国家森林公园",
+        "类别代码" : "25200",
+        "使用时间" : "现今地名",
+        "地名编码" : "34010410025200000009",
+        "街道" : "井岗镇",
+        "类别" : "公园"
+      },
+      "geometry" : {
+        "x" : 117.14905256700001,
+        "y" : 31.843898621000051
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 2,
+        "标识码" : "835b86b8-2248-409a-b1a2-0201091c2e33",
+        "图上名称" : "合肥野生动物园",
+        "类别代码" : "25200",
+        "使用时间" : "现今地名",
+        "地名编码" : "34010410025200000010",
+        "街道" : "井岗镇",
+        "类别" : "公园"
+      },
+      "geometry" : {
+        "x" : 117.16303426200011,
+        "y" : 31.83632977700006
+      }
+    }
+  ]
+}

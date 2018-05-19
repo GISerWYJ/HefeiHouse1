@@ -1,0 +1,76 @@
+page-map {
+
+  .main-content{
+    height: 100%;
+    width: 100%;
+    //display: flex;
+    //flex-direction: column;
+    //flex-wrap: nowrap;
+  }
+
+  ion-searchbar{
+    z-index: 999;
+  }
+
+  #olmap{
+    //flex-grow: 1;
+    //overflow: hidden;
+    position: absolute;
+    left: 0;
+    //right: 0;
+    top: 0;
+    //bottom: 0;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  .ol-attribution {
+    display: none;
+  }
+
+  .ol-zoom {
+    bottom: 4em;
+    right: .5em;
+    top: initial;
+    left: initial;
+    font-size: 1em;
+  }
+  .locate-btn {
+    position: absolute;
+    top: $searchbar-ios-min-height;
+    right: .5em;
+
+  }
+
+  .ol-control button, .ol-control button:focus, .ol-control button:hover {
+    background-color: #a9a9a9;
+    color: #1b1b1b;
+  }
+ 
+  .btn-group {
+    position: absolute;
+    bottom: 0;
+    //flex-grow: 1;
+    //flex-shrink: 0;
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    background-color: #efefef;
+    flex-wrap: nowrap;
+  
+  }
+
+  .btn-group button {
+    margin: 0;
+    border-radius: 0;
+    flex-shrink: 0;
+  }
+
+  
+
+  .half {
+    width: 24px;
+    height: 24px;
+  }
+}

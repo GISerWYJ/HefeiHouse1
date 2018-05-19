@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="ls_primary">
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>合肥楼市图</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openMap()">
+        <ion-icon name="maps"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar placeholder="输入楼盘名称" type="search">
+  </ion-searchbar>
+  <!--广告轮播区域-->
+  <!--<ion-slides  pager="true" class="adSlides" autoplay="2000" loop>-->
+    <!--<ion-slide style="background-color: #263238;" *ngFor="let ad of ads">-->
+        <!--<img [src]="ad.src"/>-->
+    <!--</ion-slide>-->
+  <!--</ion-slides>-->
+  <!--功能模块展示-->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 col-lg-2 *ngFor="let module of modules">
+        <img [src]="module.img" [width]="module.width" (click)="moduleClick(module.name)"/>
+        <span [innerHTML]="module.name"></span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--<ion-item-divider>-->
+    <!--<img src="assets/icon/diamond.png" width="24" height="24"/><span>&nbsp;精品楼盘</span>-->
+  <!--</ion-item-divider>-->
+
+  <div id="homeMap"></div>
+
+  <ion-item-divider>Hello World</ion-item-divider>
+  <!--<ion-card *ngFor="let recommend of recommends" (click)="recommendHouseClick(recommend)">-->
+    <!--<img [src]="recommend.src"/>-->
+    <!--<div class="card-info">-->
+      <!--<p style="color:#404040">{{recommend.title}}</p>-->
+
+      <!--<button ion-button icon-start small clear color="dark">-->
+        <!--<ion-icon name="eye"></ion-icon>-->
+        <!--查看详情-->
+      <!--</button>-->
+    <!--</div>-->
+  <!--</ion-card>-->
+
+</ion-content>

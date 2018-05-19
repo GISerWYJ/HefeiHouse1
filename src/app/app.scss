@@ -14,3 +14,45 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import "../../node_modules/ol/ol";
+@import "../photoswipe/dist/photoswipe";
+@import "../photoswipe/dist/default-skin/default-skin";
+
+
+
+// #olmap{
+//   width: 100%;
+//   height: 100%;
+
+// }
+
+.btn{
+  position: absolute;
+  top:150px;
+}
+
+.font-16{
+  font-size: 16px;
+}
+
+//.ion-ios-news{
+//  background-repeat: no-repeat;
+//  background-position: 50%;
+//  background-image: url("/assets/svg/news-selected.svg");
+//  background-size: contain;
+//  //content:url("/assets/svg/news-selected.svg");
+//}
+//[aria-selected=false] .ion-md-news{
+//  background-repeat: no-repeat;
+//  background-position: 50%;
+//  background-image: url("/assets/svg/news-selected.svg");
+//  background-size: contain;
+//}
+//.ion-ios-news-outline{
+//  background-repeat: no-repeat;
+//  background-position: 50%;
+//  background-image: url("/assets/svg/news-normal.svg");
+//  background-size: contain;
+//}
+
+

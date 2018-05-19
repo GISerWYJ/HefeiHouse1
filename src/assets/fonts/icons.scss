@@ -1,0 +1,26 @@
+@font-face {font-family: "iconfont";
+  src: url('../assets/fonts/iconfont.eot'); /* IE9*/
+  src: url('../assets/fonts/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../assets/fonts/iconfont.woff') format('woff'),
+  url('../assets/fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../assets/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+@mixin makeIcon($arg,$val,$fontSize){
+  .ion-md-#{$arg}:before,
+  .ion-ios-#{$arg}:before,
+  .ion-ios-#{$arg}-outline:before{
+    font-family:"iconfont" !important;
+    font-size:#{$fontSize}px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:$val;
+  }
+}
+
+//make icons here
+@include makeIcon(news,'\e7c6',24);
+@include makeIcon(maps,'\e611',24);
+@include makeIcon(home_,'\e6fe',20);
+@include makeIcon(setup,'\e61e',24);

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>合肥楼市图</ion-title>
+    <ion-buttons end>
+      <button ion-button small (click)="lock()">
+        <ion-icon name="search" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content no-bounce>
+
+  <div class="main-content">
+    <ion-searchbar placeholder="输入楼盘名称" type="search">
+    </ion-searchbar>
+    
+    <!-- <div style="background-color: blue;flex-grow: 1;position: relative;">
+       <div id="olmap"></div> 
+    </div> -->
+    <div id="olmap"></div>
+    <div class="btn-group">
+      <button ion-button icon-left [color]="(selectedItem=='学校'?'danger':'light')" (click)="btnClicked('学校')">
+        <ion-icon name="school"></ion-icon>学校</button>
+      <button ion-button icon-left [color]="(selectedItem=='医院'?'danger':'light')" (click)="btnClicked('医院')">
+        <ion-icon name="medical"></ion-icon>医院</button>
+      <button ion-button icon-left [color]="(selectedItem=='银行'?'danger':'light')" (click)="btnClicked('银行')">
+        <ion-icon name="card"></ion-icon>银行</button>
+      <button ion-button icon-left [color]="(selectedItem=='公交'?'danger':'light')" (click)="btnClicked('公交')">
+        <ion-icon name="bus"></ion-icon>公交</button>
+      <button ion-button icon-left [color]="(selectedItem=='地铁'?'danger':'light')" (click)="btnClicked('地铁')">
+        <ion-icon name="subway"></ion-icon>地铁</button>
+      <button ion-button icon-left [color]="(selectedItem=='楼盘'?'danger':'light')" (click)="btnClicked('楼盘')">
+        <ion-icon name="home"></ion-icon>楼盘</button>
+      <button ion-button icon-left [color]="(selectedItem=='规划'?'danger':'light')" (click)="btnClicked('规划')">
+        <ion-icon name="school"></ion-icon>规划</button>
+    </div>
+    
+  </div>
+  <button ion-button small color="primary" class="locate-btn" (click)="locate()">
+    <ion-icon name="navigate"></ion-icon>
+  </button>
+</ion-content>

@@ -1,0 +1,52 @@
+<!--
+  Generated template for the NewhousePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="ls_primary">
+      <form action="." (ngSubmit)="onSumbit()">
+        <ion-searchbar placeholder="输入楼盘名称"
+                       [(ngModel)]="searchValue"
+                       (ionInput)="onInput()"
+                       [ngModelOptions]="{standalone: true}"
+                       type="search">
+
+        </ion-searchbar>
+      </form>
+
+
+
+
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="test()">
+        <ion-icon name="maps"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="autocompleteArea" *ngIf="autoCompleteShow">
+    <ion-list>
+      <button ion-item *ngFor="let item of suggestItems" (click)="beginSearch(item)">
+        {{ item.name }}
+      </button>
+    </ion-list>
+  </div>
+
+  <ion-list *ngIf="!autoCompleteShow">
+    <ion-item  *ngFor="let lp of lpArray" (click)="openLPDetail(lp)">
+      <ion-thumbnail item-start>
+        <img src="https://pic1.ajkimg.com/display/xinfang/d14ad32bfd1fcb948acd4dc1efabe366/860x10000.jpg">
+      </ion-thumbnail>
+      <h2>{{lp.LPMC}}</h2>
+      <p>{{lp.LPDZ}}</p>
+      <button ion-button clear item-end>查看</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

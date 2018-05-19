@@ -1,3 +1,18 @@
 page-hello-ionic {
 
+  .ol-attribution{
+    display: none;
+  }
+
+  .ol-zoom{
+    bottom: .5em;
+    right: .5em;
+    top: initial;
+    left: initial;
+    font-size: 2em;
+  }
+  .ol-control button{
+    background-color: #3d3d3d;
+  }
+
 }

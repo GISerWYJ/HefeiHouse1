@@ -1,0 +1,85 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "OBJECTID" : "OBJECTID",
+    "标识码" : "标识码",
+    "图上名称" : "图上名称",
+    "类别代码" : "类别代码",
+    "使用时间" : "使用时间",
+    "地名编码" : "地名编码",
+    "街道" : "街道",
+    "类别" : "类别"
+  },
+  "geometryType" : "esriGeometryPoint",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "标识码",
+      "type" : "esriFieldTypeString",
+      "alias" : "标识码",
+      "length" : 36
+    },
+    {
+      "name" : "图上名称",
+      "type" : "esriFieldTypeString",
+      "alias" : "图上名称",
+      "length" : 100
+    },
+    {
+      "name" : "类别代码",
+      "type" : "esriFieldTypeString",
+      "alias" : "类别代码",
+      "length" : 10
+    },
+    {
+      "name" : "使用时间",
+      "type" : "esriFieldTypeString",
+      "alias" : "使用时间",
+      "length" : 30
+    },
+    {
+      "name" : "地名编码",
+      "type" : "esriFieldTypeString",
+      "alias" : "地名编码",
+      "length" : 50
+    },
+    {
+      "name" : "街道",
+      "type" : "esriFieldTypeString",
+      "alias" : "街道",
+      "length" : 50
+    },
+    {
+      "name" : "类别",
+      "type" : "esriFieldTypeString",
+      "alias" : "类别",
+      "length" : 50
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "OBJECTID" : 1,
+        "标识码" : "cc0821c8-288a-412f-b261-59e32c917f77",
+        "图上名称" : "野生动物园西入口停车场",
+        "类别代码" : "23540",
+        "使用时间" : "现今地名",
+        "地名编码" : "34010410023540000002",
+        "街道" : "井岗镇",
+        "类别" : "停车场"
+      },
+      "geometry" : {
+        "x" : 117.16054784500011,
+        "y" : 31.834804492000046
+      }
+    }
+  ]
+}

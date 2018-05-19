@@ -1,0 +1,38 @@
+<!--<ion-menu [content]="content" type="overlay">-->
+  <!--<ion-content no-bounce class="menuBg">-->
+    <!--<div class="menuContent">-->
+      <!--<ion-list padding-top no-lines>-->
+        <!--<ion-item>-->
+          <!--<ion-icon name="contact" item-start></ion-icon>-->
+          <!--欢迎您，admin-->
+        <!--</ion-item>-->
+        <!--<ion-item>-->
+          <!--<ion-icon name="call" item-start></ion-icon>-->
+          <!--联系我们-->
+        <!--</ion-item>-->
+        <!--<ion-item>-->
+          <!--<ion-icon name="bookmark" item-start></ion-icon>-->
+          <!--条款声明-->
+        <!--</ion-item>-->
+        <!--<ion-item>-->
+          <!--<ion-icon name="cog" item-start></ion-icon>-->
+          <!--应用设置-->
+        <!--</ion-item>-->
+      <!--</ion-list>-->
+
+      <!--<div class="copyright">-->
+        <!--<p>版权所有：合肥市测绘设计研究院</p>-->
+        <!--<button ion-button small color="primary" style="width: 100%">详细了解我们</button>-->
+      <!--</div>-->
+
+    <!--</div>-->
+  <!--</ion-content>-->
+
+
+<!--</ion-menu>-->
+
+<ion-tabs #content selectedIndex="0">
+  <ion-tab swipeBackEnabled="true" tabIcon="home_" tabTitle="首页" [root]="tab1"></ion-tab>
+  <ion-tab swipeBackEnabled="true" tabIcon="news" tabTitle="咨讯" [root]="tab2"></ion-tab>
+  <ion-tab swipeBackEnabled="true" tabIcon="setup" tabTitle="我的" [root]="tab3"></ion-tab>
+</ion-tabs>

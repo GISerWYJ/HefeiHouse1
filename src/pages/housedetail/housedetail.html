@@ -1,0 +1,44 @@
+<ion-header>
+  <!--不用NavBar,header也需要留着！！！-->
+</ion-header>
+
+<ion-content no-padding>
+  <ion-card>
+    <img [src]="lpInfo.THUMB" (click)="openGallry(lpInfo.LPBH)"/>
+    <div class="card-title">{{lpInfo.LPMC}}</div>
+    <div class="card-subtitle">均价{{lpInfo.YSJG}}</div>
+    <ion-badge class="card-badge" color="dark">10张</ion-badge>
+  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3 class="title">项目名称</ion-col>
+        <ion-col col-9 class="content" text-wrap>{{lpInfo.LPMC}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3 class="title">所在区域</ion-col>
+        <ion-col col-9 class="content" text-wrap>{{lpInfo.SSQY}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3 class="title">项目地址</ion-col>
+        <ion-col col-9 class="content" text-wrap>{{lpInfo.LPDZ}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3 class="title">地理位置</ion-col>
+        <ion-col col-9 class="content">
+          <button small ion-button color="primary" text-center outline (click)="viewInMap(lpInfo.GEOMETRY,lpInfo.LPMC)">
+            点击查看
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
