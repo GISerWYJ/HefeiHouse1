@@ -148,7 +148,7 @@ export class UserPage {
     //     //     //   led: 'FF0000',
     //     //     // });
     cordova.plugins.notification.local.schedule({
-      title: 'My first notification',
+      title: 'Go Hello',
       text: 'Thats pretty easy...',
       foreground: true
     });
