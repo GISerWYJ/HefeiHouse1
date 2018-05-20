@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {Component} from '@angular/core';
 import Map from 'ol/map';
 import View from 'ol/view';
@@ -20,16 +19,12 @@ import {FileTransfer, FileTransferError, FileTransferObject} from "@ionic-native
 import {URLSearchParams} from "@angular/http";
 import TileGrid from 'ol/tilegrid/tilegrid'
 import { ImageTile } from 'openlayers';
-=======
-import { Component } from '@angular/core';
->>>>>>> b239435... Initial commit
 
 @Component({
   selector: 'page-hello-ionic',
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage {
-<<<<<<< HEAD
 
 
   map: Map;
@@ -229,9 +224,4 @@ export class HelloIonicPage {
 
   }
 
-=======
-  constructor() {
-
-  }
->>>>>>> b239435... Initial commit
 }

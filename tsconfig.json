@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-<<<<<<< HEAD
 
-=======
->>>>>>> b239435... Initial commit
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "emitDecoratorMetadata": true,
@@ -15,16 +12,12 @@
     "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": true,
-<<<<<<< HEAD
     "allowJs": true,
     "target": "es5",
     "types": ["node"],
     "typeRoots": [
       "node_modules/@types"
     ]
-=======
-    "target": "es5"
->>>>>>> b239435... Initial commit
   },
   "include": [
     "src/**/*.ts"

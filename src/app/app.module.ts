@@ -10,7 +10,6 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-<<<<<<< HEAD
 import { DeviceOrientation } from "@ionic-native/device-orientation";
 import { HomePage } from "../pages/home/home";
 import { StartPage } from "../pages/start/start";
@@ -37,19 +36,16 @@ import { Keyboard } from "@ionic-native/keyboard";
 import {ScreenOrientation} from "@ionic-native/screen-orientation"
 import { ViewResizer } from '../providers/view-resizer/view-resizer';
 import { OraSpatialParser } from '../providers/ora-spatial-parser/ora-spatial-parser';
-import { HelloProvider } from '../providers/hello/hello';
+import {LocalNotifications} from "@ionic-native/local-notifications";
 
 
 
 
-=======
->>>>>>> b239435... Initial commit
 @NgModule({
   declarations: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-<<<<<<< HEAD
     ListPage,
     HomePage,
     StartPage,
@@ -74,20 +70,12 @@ import { HelloProvider } from '../providers/hello/hello';
     BrowserAnimationsModule,
 
 
-=======
-    ListPage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
->>>>>>> b239435... Initial commit
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-<<<<<<< HEAD
     ListPage,
     HomePage,
     StartPage,
@@ -97,14 +85,10 @@ import { HelloProvider } from '../providers/hello/hello';
     MapPage,
     ImageViewerPage,
     NewhousePage
-=======
-    ListPage
->>>>>>> b239435... Initial commit
   ],
   providers: [
     StatusBar,
     SplashScreen,
-<<<<<<< HEAD
     DeviceOrientation,
     Camera,
     FileTransfer,
@@ -118,13 +102,9 @@ import { HelloProvider } from '../providers/hello/hello';
     ScreenOrientation,
     ViewResizer,
     OraSpatialParser,
-    HelloProvider
+    LocalNotifications
+
+
   ]
 })
 export class AppModule { }
-=======
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
-})
-export class AppModule {}
->>>>>>> b239435... Initial commit
