@@ -14,11 +14,11 @@
 
 
 <ion-content padding>
-    <button ion-button color="danger" (click)="takePhoto()">拍照</button>
+    <button ion-button color="ls-primary" (click)="takePhoto()">拍照</button>
     <button ion-button color="danger" (click)="selectPhoto()">相册</button>
   <button ion-button color="danger" (click)="previewPhoto()">预览</button>
     <div style="width: 100px;height: 100px">
     <img [src]="imgSrc" style="width: auto;height: auto;max-width: 100%;max-height: 100%"/>
     </div>
-  <button ion-button (click)="sendNotification()">提醒</button>
+  <button ion-button full (click)="sendNotification()">提醒</button>
 </ion-content>
