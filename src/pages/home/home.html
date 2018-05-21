@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="ls_primary">
+  <ion-navbar color="primary">
     <button ion-button menuToggle icon-only>
       <ion-icon name='menu'></ion-icon>
     </button>
@@ -14,14 +14,13 @@
 
 
 <ion-content>
-  <ion-searchbar placeholder="输入楼盘名称" type="search">
-  </ion-searchbar>
+
   <!--广告轮播区域-->
-  <!--<ion-slides  pager="true" class="adSlides" autoplay="2000" loop>-->
-    <!--<ion-slide style="background-color: #263238;" *ngFor="let ad of ads">-->
-        <!--<img [src]="ad.src"/>-->
-    <!--</ion-slide>-->
-  <!--</ion-slides>-->
+  <ion-slides  pager="true" class="adSlides" autoplay="2000" loop>
+    <ion-slide style="background-color: #263238;" *ngFor="let ad of ads">
+        <img [src]="ad.src"/>
+    </ion-slide>
+  </ion-slides>
   <!--功能模块展示-->
   <ion-grid>
     <ion-row>
