@@ -102,7 +102,7 @@
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
-        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate WWWWW" />
     </plugin>
     <plugin name="cordova-plugin-admob-free" spec="^0.15.0" />
     <plugin name="com-sarriaroman-photoviewer" spec="^1.1.16" />
