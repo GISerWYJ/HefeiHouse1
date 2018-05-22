@@ -37,6 +37,7 @@ import {ScreenOrientation} from "@ionic-native/screen-orientation"
 import { ViewResizer } from '../providers/view-resizer/view-resizer';
 import { OraSpatialParser } from '../providers/ora-spatial-parser/ora-spatial-parser';
 import {LocalNotifications} from "@ionic-native/local-notifications";
+import {BarcodeScanner} from "@ionic-native/barcode-scanner";
 
 
 
@@ -102,7 +103,8 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
     ScreenOrientation,
     ViewResizer,
     OraSpatialParser,
-    LocalNotifications
+    LocalNotifications,
+    BarcodeScanner
 
 
   ]

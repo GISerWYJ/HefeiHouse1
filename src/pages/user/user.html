@@ -21,4 +21,20 @@
     <img [src]="imgSrc" style="width: auto;height: auto;max-width: 100%;max-height: 100%"/>
     </div>
   <button ion-button full (click)="sendNotification()">提醒</button>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+  <button ion-button full (click)="startScan()">扫描</button>
+  <ion-list>
+    <ion-item *ngFor="let book of books">
+      <ion-thumbnail item-start>
+        <img src="https://img3.doubanio.com/view/subject/m/public/s26849120.jpg" referrerpolicy="no-referrer">
+      </ion-thumbnail>
+      <h2>{{book.title}}</h2>
+      <p>{{book.author}}</p>
+      <button ion-button clear item-end>浏览</button>
+    </ion-item>
+  </ion-list>
+  <img src="https://img3.doubanio.com/view/subject/m/public/s26849120.jpg">
 </ion-content>

@@ -5,6 +5,7 @@ import {ImageViewerPage} from "../image-viewer/image-viewer";
 import {StatusBar} from "@ionic-native/status-bar";
 import {BaiduPoiProvider} from "../../providers/baidu-poi/baidu-poi";
 import {JsonpModule} from "@angular/http";
+import {BarcodeScanner} from "@ionic-native/barcode-scanner";
 
 
 let PhotoSwipe = require('../../photoswipe/dist/photoswipe');
@@ -21,23 +22,28 @@ let PhotoSwipeUI_Default = require('../../photoswipe/dist/photoswipe-ui-default'
  */
 
 declare let cordova;
+
 @Component({
   selector: 'page-user',
   templateUrl: 'user.html',
 })
 export class UserPage {
 
-  @ViewChild(Content) content:Content;
-  imgSrc:any;
+  @ViewChild(Content) content: Content;
+  imgSrc: any;
+  myDate: any;
+  books: any = [];
 
   constructor(public app: App,
               public navCtrl: NavController,
-              private modalCtrl:ModalController,
+              private modalCtrl: ModalController,
               public navParams: NavParams,
-              public camera:Camera,
-              private statusbar:StatusBar,
-              private poi:BaiduPoiProvider,
-              ) {
+              public camera: Camera,
+              private statusbar: StatusBar,
+              private poi: BaiduPoiProvider,
+              private barcodeScanner: BarcodeScanner,
+              private doubanBook:BaiduPoiProvider
+  ) {
 
   }
 
@@ -45,15 +51,15 @@ export class UserPage {
     console.log('ionViewDidLoad UserPage');
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     console.log('ionViewWillEnter UserPage');
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     console.log('ionViewDidEnter UserPage');
   }
 
-  previewPhoto(){
+  previewPhoto() {
     let current = this;
     // let imgViewer = this.modalCtrl.create(ImageViewerPage);
     // imgViewer.present().then(()=>{
@@ -67,13 +73,13 @@ export class UserPage {
         src: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523160211844&di=423efbc37748981109ac6f21cc835933&imgtype=0&src=http%3A%2F%2Fimages2015.cnblogs.com%2Fblog%2F297344%2F201608%2F297344-20160823111106105-1681939703.png',
         w: 693,
         h: 693,
-        title:'this is img 1'
+        title: 'this is img 1'
       },
       {
         src: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523160289729&di=fb7c862194e81b57849c0ed22c5093bc&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fd009b3de9c82d15853b891be8c0a19d8bc3e4283.jpg',
         w: 1153,
         h: 769,
-        title:'this is img  '
+        title: 'this is img  '
       }
     ];
 
@@ -85,17 +91,17 @@ export class UserPage {
     };
 
 // Initializes and opens PhotoSwipe
-    let gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+    let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
     gallery.init();
     this.statusbar.hide();
-    gallery.listen('close',function () {
+    gallery.listen('close', function () {
       //current.app.getRootNav().pop();
       current.statusbar.show();
     });
 
   }
 
-  selectPhoto(){
+  selectPhoto() {
     // const options:CameraOptions = {
     //   quality:100,
     //   destinationType:this.camera.DestinationType.DATA_URL,
@@ -113,35 +119,35 @@ export class UserPage {
     // },(error)=>{
     //
     // });
-    this.poi.queryByCircle('中学',[31.87304,117.27465],2000).subscribe(data=>{
-      console.log('Success:'+JSON.stringify(data));
-    },err=>{
-      console.log('failed:'+err.message+','+err.status);
+    this.poi.queryByCircle('中学', [31.87304, 117.27465], 2000).subscribe(data => {
+      console.log('Success:' + JSON.stringify(data));
+    }, err => {
+      console.log('failed:' + err.message + ',' + err.status);
     });
   }
 
-  takePhoto(){
-    const options:CameraOptions = {
-      quality:100,
-      destinationType:this.camera.DestinationType.DATA_URL,
-      sourceType:this.camera.PictureSourceType.CAMERA,
-      allowEdit:false,
-      encodingType:this.camera.EncodingType.JPEG,
-      saveToPhotoAlbum:false,
-      mediaType:this.camera.MediaType.PICTURE
+  takePhoto() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      sourceType: this.camera.PictureSourceType.CAMERA,
+      allowEdit: false,
+      encodingType: this.camera.EncodingType.JPEG,
+      saveToPhotoAlbum: false,
+      mediaType: this.camera.MediaType.PICTURE
     };
 
-    this.camera.getPicture(options).then((imageData)=>{
+    this.camera.getPicture(options).then((imageData) => {
 
-      this.imgSrc = 'data:image/jpeg;base64,'+imageData;
+      this.imgSrc = 'data:image/jpeg;base64,' + imageData;
       this.content.resize();
-    },(error)=>{
+    }, (error) => {
 
     });
 
   }
 
-  sendNotification(){
+  sendNotification() {
     // this.localNotifications.schedule({
     //     //     //   id:1,
     //     //     //   text:`GISerWYJ提醒您，it's coding time`,
@@ -151,6 +157,21 @@ export class UserPage {
       title: 'Go Hello111',
       text: 'Thats pretty easy...',
       foreground: true
+    });
+  }
+
+  startScan() {
+    this.barcodeScanner.scan().then(barcodeData => {
+      console.log('Barcode data ', barcodeData.text);
+      //this.books.push({barcodeData.text});
+      this.doubanBook.getBook(barcodeData.text).subscribe((data)=>{
+        console.log(data['image']);
+        this.books.push({title:data['title'],img:data['image'],author:data['author'].toString()});
+      },error1 => {
+        console.log('getBookErr:',error1.message);
+      });
+    }).catch(err => {
+      console.log(err.message);
     });
   }
 

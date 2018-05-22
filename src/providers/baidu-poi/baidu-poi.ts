@@ -25,9 +25,11 @@ export class BaiduPoiProvider {
     'region={region}&city_limit=true&output=json&ak=2E56EA42402879ae1e6a05766d9d13d3&callback=JSONP_CALLBACK';
 
 
-  private getAllLPUrl:string = 'http://192.168.1.234/lstBackend/services/hfls.asmx/getAllLP?callback=JSONP_CALLBACK';
+  private getAllLPUrl:string = 'http://192.168.1.235/lstBackend/services/hfls.asmx/getAllLP?callback=JSONP_CALLBACK';
 
   private getImgUrl:string = 'http://112.30.63.69:88/lstBackend/services/hfls.asmx/getImages?id={id}&type={type}&callback=JSONP_CALLBACK';
+
+  private getBookUrl:string = 'https://api.douban.com/v2/book/isbn/{isbn}?callback=JSONP_CALLBACK';
 
   constructor(public http: HttpClient) {
 
@@ -61,6 +63,11 @@ export class BaiduPoiProvider {
     let getImgUrl = this.getImgUrl.replace('{id}',id).
     replace('{type}',type);
     return this.http.jsonp(getImgUrl,'cb');
+  }
+
+  getBook(isbn){
+    let getBookUrl = this.getBookUrl.replace('{isbn}',isbn);
+    return this.http.jsonp(getBookUrl,'cb');
   }
 
 }
