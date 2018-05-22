@@ -166,7 +166,7 @@ export class UserPage {
       //this.books.push({barcodeData.text});
       this.doubanBook.getBook(barcodeData.text).subscribe((data)=>{
         console.log(data['image']);
-        this.books.push({title:data['title'],img:data['image'],author:data['author'].toString()});
+        this.books.push({title:data['title'],img:data['images'].small,author:data['author'].toString()});
       },error1 => {
         console.log('getBookErr:',error1.message);
       });

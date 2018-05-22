@@ -29,7 +29,7 @@
   <ion-list>
     <ion-item *ngFor="let book of books">
       <ion-thumbnail item-start>
-        <img src="https://img3.doubanio.com/view/subject/m/public/s26849120.jpg" referrerpolicy="no-referrer">
+        <img [src]="book.img">
       </ion-thumbnail>
       <h2>{{book.title}}</h2>
       <p>{{book.author}}</p>
