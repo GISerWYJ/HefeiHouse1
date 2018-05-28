@@ -40,7 +40,7 @@ export class HousedetailPage {
     this.navCtrl.push(MapPage,{geometry:geometry,name:name});
   }
 
-  openGallry(lpID){
+  openGallry(lpID,category=''){
 
     let current  = this;
     let pswpElement = document.querySelectorAll('.pswp')[0];
@@ -49,7 +49,7 @@ export class HousedetailPage {
       index: 0
     };
 
-    this.poi.getImgs(lpID).subscribe(data=>{
+    this.poi.getImgs(lpID,category).subscribe(data=>{
       items = data["Table"];
       console.log(JSON.stringify(items));
       let gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);

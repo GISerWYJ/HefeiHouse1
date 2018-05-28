@@ -112,6 +112,7 @@ export class MapPage {
 
   ionViewWillLeave(){
     this.navCtrl.swipeBackEnabled = true;
+    this.navCtrl.canSwipeBack();
   }
 
   btnClicked(item){
@@ -197,22 +198,22 @@ export class MapPage {
   }
 
   lock(){
-    let toast = this.toastCtrl.create({
-      duration: 3000,
-
-    });
-
-    if(this.locked){
-      this.screenOrientation.unlock();
-      toast.setMessage("屏幕锁定解除");
-
-    }else{
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
-      toast.setMessage("屏幕锁定开启");
-    }
-    this.locked = !this.locked;
-    toast.present();
-    this.map.updateSize();
+    // let toast = this.toastCtrl.create({
+    //   duration: 3000,
+    //
+    // });
+    //
+    // if(this.locked){
+    //   this.screenOrientation.unlock();
+    //   toast.setMessage("屏幕锁定解除");
+    //
+    // }else{
+    //   this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
+    //   toast.setMessage("屏幕锁定开启");
+    // }
+    // this.locked = !this.locked;
+    // toast.present();
+    // this.map.updateSize();
   }
 
   locate() {
@@ -385,9 +386,9 @@ export class MapPage {
       this.locate();
     }
     if (this.plt.is('ios') || this.plt.is('android')) {
-      // setTimeout(() => {
-      //   this.map.updateSize();
-      // }, 110);
+      setTimeout(() => {
+        this.map.updateSize();
+      }, 100);
       // this.keyboard.onKeyboardShow().subscribe(() => {
       //   console.log('Map Height:' + this.map.getViewport().clientHeight);
       // });

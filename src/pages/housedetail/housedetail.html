@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content no-padding>
-  <ion-card>
+  <ion-card class="mycard">
     <img src="http://112.30.63.69:88/lstBackend/imgs/{{lpInfo.LPBH}}/thumb/{{lpInfo.THUMB}}" (click)="openGallry(lpInfo.LPBH)"/>
     <div class="card-title">{{lpInfo.LPMC}}</div>
     <div class="card-subtitle">均价{{lpInfo.YSJG}}</div>
@@ -75,6 +75,28 @@
       </ion-row>
     </ion-item>
   </ion-list>
+
+  <ion-item-divider>实景图</ion-item-divider>
+  <ion-card>
+    <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-saopaolo.png" (click)="openGallry(lpInfo.LPBH,'实景图')"/>
+    <div class="card-title">楼盘实景</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+
+  <ion-item-divider>户型图</ion-item-divider>
+  <ion-card>
+    <img src="https://ionicframework.com/dist/preview-app/www/assets/img/advance-card-map-mario.png" (click)="openGallry(lpInfo.LPBH,'户型图')"/>
+    <div class="card-title">户型图</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+
+  <ion-item-divider>效果图</ion-item-divider>
+  <ion-card>
+    <img src="https://ionicframework.com/dist/preview-app/www/assets/img/advance-card-map-madison.png" (click)="openGallry(lpInfo.LPBH,'效果图')"/>
+    <div class="card-title">效果图</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+
 </ion-content>
 
 

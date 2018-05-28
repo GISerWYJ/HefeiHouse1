@@ -26,7 +26,7 @@ export class HttpService {
 
   private getAllLPUrl: string = 'http://112.30.63.69:88/lstBackend/services/hfls.asmx/getAllLP?callback=JSONP_CALLBACK';
 
-  private getImgUrl: string = 'http://112.30.63.69:88/lstBackend/services/hfls.asmx/getImages?id={id}&type={type}&callback=JSONP_CALLBACK';
+  private getImgUrl: string = 'http://112.30.63.69:88/lstBackend/services/hfls.asmx/getImages?id={id}&category={category}&callback=JSONP_CALLBACK';
 
   private getBookUrl: string = 'https://api.douban.com/v2/book/isbn/{isbn}?callback=JSONP_CALLBACK';
 
@@ -58,8 +58,8 @@ export class HttpService {
     return this.http.jsonp(this.getAllLPUrl, 'cb');
   }
 
-  getImgs(id, type = "") {
-    let getImgUrl = this.getImgUrl.replace('{id}', id).replace('{type}', type);
+  getImgs(id, category = "") {
+    let getImgUrl = this.getImgUrl.replace('{id}', 'XF00001').replace('{category}', category);
     return this.http.jsonp(getImgUrl, 'cb');
   }
 
