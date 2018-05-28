@@ -8,7 +8,7 @@ import Text from 'ol/style/text';
 import Icon from 'ol/style/icon';
 
 import EsriJSON from 'ol/format/esrijson';
-import {BaiduPoiProvider} from "./providers/baidu-poi/baidu-poi";
+import {HttpService} from "./providers/http-service/http-service";
 export class NearbyLayer{
 
   hospital:Vector;
@@ -22,7 +22,7 @@ export class NearbyLayer{
   vectorSource:VectorSource;
   layer:Vector;
   currentType:string;
-  constructor(private poi:BaiduPoiProvider){
+  constructor(private poi:HttpService){
 
     this.vectorSource = new VectorSource();
     this.layer = new Vector({

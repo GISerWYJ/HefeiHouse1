@@ -3,7 +3,7 @@ import {Content, NavController, NavParams} from 'ionic-angular';
 import {MapPage} from "../map/map";
 import {PhotoViewer} from "@ionic-native/photo-viewer";
 import {StatusBar} from "@ionic-native/status-bar";
-import {BaiduPoiProvider} from "../../providers/baidu-poi/baidu-poi";
+import {HttpService} from "../../providers/http-service/http-service";
 let PhotoSwipe = require('../../photoswipe/dist/photoswipe');
 let PhotoSwipeUI_Default = require('../../photoswipe/dist/photoswipe-ui-default');
 /**
@@ -31,7 +31,7 @@ export class HousedetailPage {
               public navCtrl: NavController,
               public navParams: NavParams,
               private photoViewer:PhotoViewer,
-              private poi:BaiduPoiProvider
+              private poi:HttpService
   ) {
     this.lpInfo = this.navParams.get('info');
   }

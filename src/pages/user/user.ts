@@ -3,9 +3,9 @@ import {App, Content, IonicPage, ModalController, NavController, NavParams} from
 import {Camera, CameraOptions} from "@ionic-native/camera";
 import {ImageViewerPage} from "../image-viewer/image-viewer";
 import {StatusBar} from "@ionic-native/status-bar";
-import {BaiduPoiProvider} from "../../providers/baidu-poi/baidu-poi";
 import {JsonpModule} from "@angular/http";
 import {BarcodeScanner} from "@ionic-native/barcode-scanner";
+import {HttpService} from "../../providers/http-service/http-service";
 
 
 let PhotoSwipe = require('../../photoswipe/dist/photoswipe');
@@ -40,9 +40,9 @@ export class UserPage {
               public navParams: NavParams,
               public camera: Camera,
               private statusbar: StatusBar,
-              private poi: BaiduPoiProvider,
+              private poi: HttpService,
               private barcodeScanner: BarcodeScanner,
-              private doubanBook:BaiduPoiProvider
+              private doubanBook:HttpService
   ) {
 
   }

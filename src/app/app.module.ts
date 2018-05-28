@@ -28,7 +28,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { ZoomPanDirective } from "../directives/zoom-pan/zoom-pan";
 import { ImageViewerPage } from "../pages/image-viewer/image-viewer";
-import { BaiduPoiProvider } from '../providers/baidu-poi/baidu-poi';
 import { HttpClientJsonpModule, HttpClientModule } from "@angular/common/http";
 
 import { NewhousePage } from "../pages/newhouse/newhouse";
@@ -38,6 +37,8 @@ import { ViewResizer } from '../providers/view-resizer/view-resizer';
 import { OraSpatialParser } from '../providers/ora-spatial-parser/ora-spatial-parser';
 import {LocalNotifications} from "@ionic-native/local-notifications";
 import {BarcodeScanner} from "@ionic-native/barcode-scanner";
+import {HttpService} from "../providers/http-service/http-service";
+import {NewsDetailPage} from "../pages/news-detail/news-detail";
 
 
 
@@ -56,7 +57,8 @@ import {BarcodeScanner} from "@ionic-native/barcode-scanner";
     MapPage,
     ZoomPanDirective,
     ImageViewerPage,
-    NewhousePage
+    NewhousePage,
+    NewsDetailPage
   ],
   imports: [
     BrowserModule,
@@ -85,7 +87,8 @@ import {BarcodeScanner} from "@ionic-native/barcode-scanner";
     HousedetailPage,
     MapPage,
     ImageViewerPage,
-    NewhousePage
+    NewhousePage,
+    NewsDetailPage
   ],
   providers: [
     StatusBar,
@@ -98,7 +101,7 @@ import {BarcodeScanner} from "@ionic-native/barcode-scanner";
     AdMobFree,
     PhotoViewer,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    BaiduPoiProvider,
+    HttpService,
     Keyboard,
     ScreenOrientation,
     ViewResizer,

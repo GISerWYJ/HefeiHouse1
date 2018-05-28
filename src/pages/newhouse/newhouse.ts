@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {App, NavController, NavParams, ViewController} from 'ionic-angular';
+import {App, Loading, LoadingController, NavController, NavParams, ViewController} from 'ionic-angular';
 import {getDefaultConfig} from "@ionic/storage/dist/storage";
-import {BaiduPoiProvider} from "../../providers/baidu-poi/baidu-poi";
 import {Keyboard} from "@ionic-native/keyboard";
 import {HousedetailPage} from "../housedetail/housedetail";
+import {HttpService} from "../../providers/http-service/http-service";
 
 
 @Component({
@@ -18,12 +18,14 @@ export class NewhousePage {
   suggestItems:string[];
   lpArray:any[];
   homeMap:any;
+  loading:Loading;
   constructor(private app:App,
               public navCtrl: NavController,
               public navParams: NavParams,
               private viewCtrl:ViewController,
-              private poi:BaiduPoiProvider,
-              private keyboard:Keyboard) {
+              private lpService:HttpService,
+              private keyboard:Keyboard,
+              private loadCtrl:LoadingController) {
 
                this.homeMap = this.navParams.get("homeMap");
 
@@ -31,11 +33,15 @@ export class NewhousePage {
 
   ionViewDidLoad() {
     //this.viewCtrl.setBackButtonText("");
-    this.poi.getAllLP().subscribe(data=>{
+    this.loading = this.loadCtrl.create({
+      content:'正在加载新房列表'
+    });
+    this.loading.present();
+    this.lpService.getAllLP().subscribe(data=>{
        //console.log(JSON.stringify(data)) ;
 
         this.lpArray = data['Table'];
-
+        this.loading.dismiss();
     },err => {
       console.log(err.message);
     });
@@ -54,10 +60,7 @@ export class NewhousePage {
   }
   ionViewWillLeave(){
     console.log('vvvv:'+this.homeMap.getViewport().clientHeight);
-
     this.homeMap.updateSize();
-
-
   }
 
   openLPDetail(lpInfo){
@@ -78,7 +81,7 @@ export class NewhousePage {
     }
 
     this.autoCompleteShow = !searchValueEmpty;
-    this.poi.getSuggestions(this.searchValue).subscribe(data=>{
+    this.lpService.getSuggestions(this.searchValue).subscribe(data=>{
       //console.log(JSON.stringify(data))
       if(data['message']=='ok'){
         this.suggestItems = data['result'];
@@ -99,7 +102,7 @@ export class NewhousePage {
     this.keyboard.close();
     console.log('submitted..');
 
-    this.poi.getPlaces(this.searchValue).subscribe(data=>{
+    this.lpService.getPlaces(this.searchValue).subscribe(data=>{
       if(data['message']=='ok'){
         this.searchItems = data['results'];
       }

@@ -32,13 +32,13 @@ import KML from 'ol/format/kml';
 import GeoJSON from 'ol/format/geojson';
 import EsriJSON from 'ol/format/esrijson';
 import {NearbyLayer} from "../../NearbyLayer";
-import {BaiduPoiProvider} from "../../providers/baidu-poi/baidu-poi";
 import Map from 'ol/map';
 import View from 'ol/view';
 import proj from 'ol/proj';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { ViewResizer } from '../../providers/view-resizer/view-resizer';
 import {Keyboard} from "@ionic-native/keyboard";
+import {HttpService} from "../../providers/http-service/http-service";
 
 
 
@@ -65,6 +65,7 @@ export class MapPage {
   currentHouseLayerSource:VectorSource;
 
   houseLocation:any;
+  houseCenter:any;
   houseName:string;
 
   locked:boolean = false;
@@ -80,7 +81,7 @@ export class MapPage {
               public plt: Platform,
               public alertCtrl: AlertController,
               private navCtrl:NavController,
-              private poi:BaiduPoiProvider,
+              private poi:HttpService,
               private toastCtrl:ToastController,
               private viewResizer:ViewResizer,
               private keyboard:Keyboard,
@@ -115,7 +116,7 @@ export class MapPage {
 
   btnClicked(item){
     this.selectedItem = item;
-    this.poi.queryByCircle(item,[this.houseLocation[1],this.houseLocation[0]],2000).subscribe(data=>{
+    this.poi.queryByCircle(item,BaiduLayer.BMtoBD09(this.houseCenter).reverse(),2000).subscribe(data=>{
       this.queryFeatures=[];
       this.nearbyLayerSource.clear();
       let results:any[] = data["results"];
@@ -352,11 +353,11 @@ export class MapPage {
       let geo:Polygon = (new Polygon([this.generatePolygonFromWKT(this.houseLocation)]));
       //let bdProj:any = proj.get('baidu');
       //geo.transform('EPSG:4326','baidu');
-      let center = extent.getCenter(geo.getExtent());
-      this.map.getView().setCenter(center);
+      this.houseCenter = extent.getCenter(geo.getExtent());
+      this.map.getView().setCenter(this.houseCenter);
       let feature = new Feature({
         geometry: geo,
-        labelPoint: new Point(center),
+        labelPoint: new Point(this.houseCenter),
         name: this.houseName
       });
       feature.setStyle(new Style({

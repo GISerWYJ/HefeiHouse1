@@ -4,7 +4,7 @@
 
 <ion-content no-padding>
   <ion-card>
-    <img [src]="lpInfo.THUMB" (click)="openGallry(lpInfo.LPBH)"/>
+    <img src="http://112.30.63.69:88/lstBackend/imgs/{{lpInfo.LPBH}}/thumb/{{lpInfo.THUMB}}" (click)="openGallry(lpInfo.LPBH)"/>
     <div class="card-title">{{lpInfo.LPMC}}</div>
     <div class="card-subtitle">均价{{lpInfo.YSJG}}</div>
     <ion-badge class="card-badge" color="dark">10张</ion-badge>
@@ -26,6 +26,42 @@
       <ion-row>
         <ion-col col-3 class="title">项目地址</ion-col>
         <ion-col col-9 class="content" text-wrap>{{lpInfo.LPDZ}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3 class="title">装修程度</ion-col>
+        <ion-col col-9 class="content" text-wrap>{{lpInfo.ZXCD}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3 class="title">开盘时间</ion-col>
+        <ion-col col-9 class="content" text-wrap>{{lpInfo.KPSJ|date: 'yyyy-MM-dd'}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3 class="title">开发公司</ion-col>
+        <ion-col col-9 class="content" text-wrap>{{lpInfo.KFGS}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3 class="title">物业公司</ion-col>
+        <ion-col col-9 class="content" text-wrap>{{lpInfo.WYGLDW}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+    <ion-row>
+      <ion-col col-3 class="title">产权年限</ion-col>
+      <ion-col col-9 class="content" text-wrap>{{lpInfo.CQNX}}</ion-col>
+    </ion-row>
+  </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3 class="title">车位情况</ion-col>
+        <ion-col col-9 class="content" text-wrap>{{lpInfo.CWQK}}</ion-col>
       </ion-row>
     </ion-item>
     <ion-item>

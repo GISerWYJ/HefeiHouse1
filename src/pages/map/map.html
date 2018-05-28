@@ -21,14 +21,13 @@
 <ion-content no-bounce>
 
   <div class="main-content">
-    <ion-searchbar placeholder="输入楼盘名称" type="search">
-    </ion-searchbar>
-    
+
+
     <!-- <div style="background-color: blue;flex-grow: 1;position: relative;">
-       <div id="olmap"></div> 
+       <div id="olmap"></div>
     </div> -->
     <div id="olmap"></div>
-    <div class="btn-group">
+    <div class="btn-group" *ngIf="houseLocation">
       <button ion-button icon-left [color]="(selectedItem=='学校'?'danger':'light')" (click)="btnClicked('学校')">
         <ion-icon name="school"></ion-icon>学校</button>
       <button ion-button icon-left [color]="(selectedItem=='医院'?'danger':'light')" (click)="btnClicked('医院')">
@@ -44,7 +43,7 @@
       <button ion-button icon-left [color]="(selectedItem=='规划'?'danger':'light')" (click)="btnClicked('规划')">
         <ion-icon name="school"></ion-icon>规划</button>
     </div>
-    
+
   </div>
   <button ion-button small color="primary" class="locate-btn" (click)="locate()">
     <ion-icon name="navigate"></ion-icon>

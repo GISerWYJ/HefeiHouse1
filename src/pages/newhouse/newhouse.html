@@ -41,7 +41,7 @@
   <ion-list *ngIf="!autoCompleteShow">
     <ion-item  *ngFor="let lp of lpArray" (click)="openLPDetail(lp)">
       <ion-thumbnail item-start>
-        <img src="https://pic1.ajkimg.com/display/xinfang/d14ad32bfd1fcb948acd4dc1efabe366/860x10000.jpg">
+        <img src="http://112.30.63.69:88/lstBackend/imgs/{{lp.LPBH}}/thumb/{{lp.THUMB}}">
       </ion-thumbnail>
       <h2>{{lp.LPMC}}</h2>
       <p>{{lp.LPDZ}}</p>

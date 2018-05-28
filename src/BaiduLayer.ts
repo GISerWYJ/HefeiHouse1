@@ -76,6 +76,10 @@ export class BaiduLayer{
     return proj.transform(BaiduLayer.BD09toWGS84(point), "EPSG:4326", "baidu");
   }
 
+  static BMtoBD09(point){
+    return BaiduLayer.WGS84toBD09(proj.transform(BaiduLayer.BD09toWGS84(point), "baidu","EPSG:4326"));
+  }
+
   static WGS84toBM(point){
     BaiduLayer.BD09toBM(BaiduLayer.WGS84toBD09(point));
   }
