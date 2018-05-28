@@ -1,0 +1,29 @@
+<!--
+  Generated template for the NewsDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>新闻详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="arcticle">
+  <div class="jsx-3805870808 primary">
+    <h1 class="jsx-3805870808 title" id="newsTitle" [innerHTML]="arcticle.articletitle"></h1>
+    <div class="jsx-3805870808 meta">
+      <a class="jsx-3805870808 author">
+        <i class="jsx-3805870808"></i>
+        <span class="jsx-3805870808" id="newsAuthor" [innerHTML]="arcticle.articleauthor"></span>
+      </a>
+      <div class="jsx-3805870808 pubtime" id="newsTime" [innerHTML]="arcticle.articletime"></div>
+    </div>
+  </div>
+
+  <div id="newsPage" [innerHTML]="arcticle.articlecontent"> </div>
+</ion-content>
